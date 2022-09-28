@@ -13,10 +13,7 @@ function initQuiz() {
         const submitButtonEl = document.getElementById("submit-initials");
         const highscoreButtonEl = document.getElementById("highscore-button");
         const highscoreContainerEl = document.getElementById("highscore-container");
-        let highScores = [];
-        if (JSON.parse(localStorage.getItem('scores')) !== null) {
-            highScores = JSON.parse(localStorage.getItem("scores"));
-        }
+        
         
         
         function startQuiz() {
