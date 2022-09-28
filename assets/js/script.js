@@ -44,7 +44,6 @@ function initQuiz() {
             },1000);
             let clickTimeout = false;
             function generateQuestion(questionNum) {
-                //  During the quiz, the header has the current question, and the answer buttons have the possible answers for that question
                 quizContainerEl.innerHTML = "";
                 rowEl = document.createElement("div");
                 rowEl.setAttribute("class","row");
@@ -91,7 +90,7 @@ function initQuiz() {
                     buttonEl.innerHTML = questions[currentQuestion-1].choices[i];
                     colEl2.append(buttonEl);
                     buttonEl.addEventListener("click",function(){
-                        //  When the user clicks one of the answer buttons, if it is the correct answer, the message "Correct" is displayed, and if not, the message "Incorrect" is displayed and 10 seconds deducted from the timer
+                        
                         if (clickTimeout) {
                             return;
                         }
@@ -123,9 +122,8 @@ function initQuiz() {
                             score = timeRemaining;
                         }
                         setTimeout(function() {
-                            // When an answer is chosen, pause the timer and show the result for 2 seconds before loading the next question
+                         
                             if (currentQuestion>questions.length) {
-                                // Move to the results page
                                 quizContainerEl.setAttribute("class","container d-none");
                                 finalContainerEl.setAttribute("class","container");
                                 finalScoreEl.setAttribute("value",score);
